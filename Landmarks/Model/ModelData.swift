@@ -1,13 +1,7 @@
-//
-//  ModelData.swift
-//  Landmarks
-//
-//  Created by Станислав Леонов on 16.06.2025.
-//
-
 import Foundation
 
 var landmarks: [Landmark] = load("landmarkData.json")
+
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
