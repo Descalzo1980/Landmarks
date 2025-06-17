@@ -1,8 +1,24 @@
-//
-//  LandmarkList.swift
-//  Landmarks
-//
-//  Created by Станислав Леонов on 16.06.2025.
-//
+import SwiftUI
 
-import Foundation
+struct LandmarkList: View {
+    var body: some View {
+        NavigationSplitView {
+            List(landmarks) { landmark in
+                NavigationLink{
+                    LandmarkDetail(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        } detail: {
+            Text("Selected a Landmark")
+        }
+    }
+}
+
+#Preview {
+    LandmarkList()
+}
+
+
